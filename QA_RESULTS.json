@@ -1,0 +1,12 @@
+{
+  "source_syntax": "passed",
+  "footer_technology_line_removed": true,
+  "runtime_img_sources_local": true,
+  "emoji_ui_replaced_with_local_icons": true,
+  "vet_incomplete_email_rejected": true,
+  "feedback_incomplete_email_rejected": true,
+  "valid_vet_email_advances": true,
+  "product_cards_demonstrated": 5,
+  "adoption_cards_demonstrated": 3,
+  "video_frames_from_real_browser_interactions": 11
+}

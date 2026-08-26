@@ -1,0 +1,490 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="FurEver Care - a responsive pet care portal for pet owners, veterinarians and animal shelters.">
+  <meta name="theme-color" content="#6d4aff">
+  <title>FurEver Care | They Deserve Forever Love</title>
+
+  <!-- Bootstrap is intentionally used only as a utility/layout layer. The visual design is custom. -->
+  <link href="vendor/bootstrap.min.css" rel="stylesheet">
+  <link href="vendor/bootstrap-icons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+
+  <div class="page-orbs" aria-hidden="true">
+    <span class="orb orb-one"></span>
+    <span class="orb orb-two"></span>
+    <span class="orb orb-three"></span>
+  </div>
+
+  <header class="site-topbar" id="siteTopbar">
+    <div class="container-fluid px-lg-4">
+      <div class="topbar-row">
+        <button class="brand-button" id="brandHomeBtn" type="button" aria-label="Go to start page">
+          <span class="brand-mark" aria-hidden="true"><i class="bi bi-heart-fill"></i></span>
+          <span class="brand-copy">
+            <strong>FurEver Care</strong>
+            <small>They Deserve Forever Love</small>
+          </span>
+        </button>
+
+        <div class="topbar-status" id="topbarStatus" hidden>
+          <span class="status-chip" id="userNameChip">Guest</span>
+          <span class="status-chip context-chip" id="contextNameChip">Welcome</span>
+          <button class="mini-action" id="changeRoleBtn" type="button">Switch role</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="care-ticker" id="careTicker" aria-live="polite">
+    <div class="ticker-label">LIVE</div>
+    <div class="ticker-window">
+      <div class="ticker-track" id="tickerTrack">
+        <span id="tickerLocation">Location: waiting for permission</span>
+        <span id="tickerClock">Time: --:--:--</span>
+        <span>Daily care reminder: fresh water, safe exercise and affection.</span>
+        <span id="visitorTicker">Visitors: 0</span>
+      </div>
+    </div>
+  </div>
+
+  <main id="mainContent">
+    <!-- LANDING / ROLE GATE -->
+    <section class="screen is-active" id="welcomeGate" data-screen="welcome">
+      <div class="container py-5 py-lg-6">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-6">
+            <div class="eyebrow reveal-me">Smart care for every companion</div>
+            <h1 class="hero-title reveal-me">One colorful place for a <span>healthier, happier pet life.</span></h1>
+            <p class="hero-lead reveal-me">Manage pet details, explore care guides and products, view vet information, or discover adoptable pets through one responsive portal.</p>
+
+            <div class="hero-points reveal-me" aria-label="Portal highlights">
+              <div><b>24/7</b><span>Care information</span></div>
+              <div><b>3</b><span>User experiences</span></div>
+              <div><b>SPA</b><span>Smooth navigation</span></div>
+            </div>
+
+            <form class="welcome-form reveal-me" id="welcomeForm" novalidate>
+              <div class="form-floating mb-3">
+                <input class="form-control" id="firstName" name="firstName" type="text" placeholder="Your first name" minlength="3" maxlength="24" autocomplete="given-name" pattern="[A-Za-z][A-Za-z .'-]*" required>
+                <label for="firstName">Enter your first name</label>
+                <div class="invalid-feedback">Name must be at least 3 characters and contain letters only (spaces, apostrophe and hyphen are allowed).</div>
+              </div>
+
+              <fieldset class="role-choice">
+                <legend>Choose the user category you belong to</legend>
+                <label class="role-card">
+                  <input type="radio" name="userRole" value="owner" required>
+                  <span class="role-icon" aria-hidden="true"><i class="bi bi-person-badge"></i></span>
+                  <span><strong>Pet Owner</strong><small>Profiles, care, products & help</small></span>
+                </label>
+                <label class="role-card">
+                  <input type="radio" name="userRole" value="vet" required>
+                  <span class="role-icon" aria-hidden="true"><i class="bi bi-bandaid"></i></span>
+                  <span><strong>Veterinarian</strong><small>Profile, slots & case studies</small></span>
+                </label>
+                <label class="role-card">
+                  <input type="radio" name="userRole" value="shelter" required>
+                  <span class="role-icon" aria-hidden="true"><i class="bi bi-house-door"></i></span>
+                  <span><strong>Animal Shelter / Rescue</strong><small>Adoptions, stories & events</small></span>
+                </label>
+                <div class="role-error" id="roleError" hidden>Please choose a user category.</div>
+              </fieldset>
+
+              <button class="primary-cta" type="submit">Enter FurEver Care <i class="bi bi-arrow-right" aria-hidden="true"></i></button>
+            </form>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="pet-collage reveal-me" aria-label="Pet care image collage">
+              <div class="collage-main image-frame">
+                <img src="assets/images/hero-dog.jpg" alt="Golden retriever looking at the camera">
+                <span class="photo-tag">Daily Care</span>
+              </div>
+              <div class="collage-small cat-card image-frame">
+                <img src="assets/images/hero-cat.jpg" alt="Orange domestic cat">
+                <span class="photo-tag">Wellness</span>
+              </div>
+              <div class="collage-small rabbit-card image-frame">
+                <img src="assets/images/hero-pet-illustration.jpg" alt="Pet care illustration">
+                <span class="photo-tag">Adoption</span>
+              </div>
+              <div class="floating-note note-one"><span aria-hidden="true"><i class="bi bi-heart"></i></span> Care with confidence</div>
+              <div class="floating-note note-two"><span aria-hidden="true"><i class="bi bi-stars"></i></span> Friendly & responsive</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PET OWNER SETUP -->
+    <section class="screen" id="petSetupScreen" data-screen="pet-setup" hidden>
+      <div class="container py-5">
+        <div class="setup-shell mx-auto">
+          <div class="setup-art pet-art">
+            <div class="setup-badge">Pet Owner Setup</div>
+            <h2>Tell us about your best friend.</h2>
+            <p>This information stays in your browser session and is used only to personalize this demo portal.</p>
+            <img src="assets/images/pet-setup.jpg" alt="A cat and a dog greeting each other">
+          </div>
+
+          <form class="setup-form" id="petProfileForm" novalidate>
+            <div class="section-kicker">Pet details</div>
+            <h3>Create a quick pet profile</h3>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="petName">Pet name</label>
+                <input class="form-control" id="petName" name="petName" required minlength="3" maxlength="30" pattern="[A-Za-z][A-Za-z .'-]*"><div class="invalid-feedback">Pet name must be at least 3 characters and contain letters only.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="petSpecies">Species</label>
+                <select class="form-select" id="petSpecies" name="petSpecies" required>
+                  <option value="">Choose...</option>
+                  <option>Dog</option><option>Cat</option><option>Rabbit</option><option>Bird</option><option>Other</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="petBreed">Breed</label>
+                <input class="form-control" id="petBreed" name="petBreed" placeholder="e.g. Labrador">
+              </div>
+              <div class="col-md-3">
+                <label class="form-label" for="petAge">Age</label>
+                <input class="form-control" id="petAge" name="petAge" type="number" min="0" max="40" step="0.1" required>
+              </div>
+              <div class="col-md-3">
+                <label class="form-label" for="petWeight">Weight kg</label>
+                <input class="form-control" id="petWeight" name="petWeight" type="number" min="0.1" max="150" step="0.1">
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="petVaccination">Vaccination status</label>
+                <select class="form-select" id="petVaccination" name="petVaccination">
+                  <option>Up to date</option><option>Due soon</option><option>Not sure</option><option>Not vaccinated</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="petGender">Gender</label>
+                <select class="form-select" id="petGender" name="petGender"><option>Male</option><option>Female</option><option>Unknown</option></select>
+              </div>
+            </div>
+            <div class="form-actions mt-4">
+              <button class="soft-button" type="button" data-back-to-welcome>Back</button>
+              <button class="primary-cta compact" type="submit">Open Pet Dashboard</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- VET SETUP -->
+    <section class="screen" id="vetSetupScreen" data-screen="vet-setup" hidden>
+      <div class="container py-5">
+        <div class="setup-shell mx-auto vet-setup-shell">
+          <div class="setup-art vet-art">
+            <div class="setup-badge">Veterinarian Setup</div>
+            <h2>Build your professional snapshot.</h2>
+            <p>The profile image is previewed with HTML5 FileReader and is not uploaded anywhere.</p>
+            <img src="assets/images/vet-setup.jpg" alt="Golden retriever being gently petted">
+          </div>
+
+          <form class="setup-form" id="vetProfileForm" novalidate>
+            <div class="section-kicker">Veterinarian details</div>
+            <h3>Create your profile</h3>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label class="form-label" for="vetName">Full name</label>
+                <input class="form-control" id="vetName" name="vetName" required minlength="3" maxlength="60" pattern="[A-Za-z][A-Za-z .'-]*"><div class="invalid-feedback">Name must be at least 3 characters and contain letters only.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="vetSpecialization">Specialization</label>
+                <select class="form-select" id="vetSpecialization" name="vetSpecialization" required>
+                  <option value="">Choose...</option><option>General Practice</option><option>Small Animal Medicine</option><option>Dermatology</option><option>Surgery</option><option>Dental Care</option><option>Emergency Care</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="vetEmail">Email</label>
+                <input class="form-control" id="vetEmail" name="vetEmail" type="email" required autocomplete="email" inputmode="email" pattern="[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}" placeholder="doctor@example.com"><div class="invalid-feedback">Enter a complete email address, for example doctor@example.com.</div>
+              </div>
+              <div class="col-md-6">
+                <label class="form-label" for="vetPhone">Contact number</label>
+                <input class="form-control" id="vetPhone" name="vetPhone" type="tel" required placeholder="+92 300 0000000">
+              </div>
+              <div class="col-12">
+                <label class="form-label" for="vetImage">Profile image</label>
+                <input class="form-control" id="vetImage" name="vetImage" type="file" accept="image/*">
+                <div class="form-text">Optional. The image file name/type/size are saved in the JSON record; the image itself remains local preview-only.</div>
+              </div>
+            </div>
+            <div class="form-actions mt-4">
+              <button class="soft-button" type="button" data-back-to-welcome>Back</button>
+              <button class="primary-cta compact" type="submit">Open Vet Dashboard</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN PORTAL SPA -->
+    <section class="screen" id="portalScreen" data-screen="portal" hidden>
+      <div class="portal-layout">
+        <aside class="portal-sidebar" id="portalSidebar">
+          <div class="sidebar-head">
+            <span class="sidebar-role-icon" id="sidebarRoleIcon" aria-hidden="true"><i class="bi bi-heart-fill"></i></span>
+            <div><strong id="sidebarTitle">Pet Portal</strong><small id="sidebarSubtitle">Personalized care</small></div>
+          </div>
+          <nav class="paw-nav" id="pawNav" aria-label="Portal navigation"></nav>
+          <div class="sidebar-foot">
+            <div class="visitor-card"><span aria-hidden="true"><i class="bi bi-people"></i></span><div><small>Simulated visitors</small><strong id="visitorCount">0</strong></div></div>
+            <button class="soft-button w-100 mb-2" id="downloadJsonBtn" type="button"><i class="bi bi-download me-1"></i> Download JSON Data</button>
+            <button class="soft-button w-100" id="sidebarExitBtn" type="button">Return to welcome</button>
+          </div>
+        </aside>
+
+        <div class="portal-main">
+          <button class="mobile-nav-toggle" id="mobileNavToggle" type="button" aria-controls="portalSidebar" aria-expanded="false"><i class="bi bi-list" aria-hidden="true"></i> Menu</button>
+
+          <!-- OWNER PANELS -->
+          <section class="portal-panel" id="ownerOverview" data-role="owner" data-panel="owner-overview">
+            <div class="panel-hero owner-hero">
+              <div>
+                <div class="section-kicker">Pet Owner Dashboard</div>
+                <h2>Welcome back, <span class="js-user-name">friend</span>.</h2>
+                <p>Everything for <strong class="js-pet-name">your pet</strong> is organized into simple care, product, emergency and contact sections.</p>
+                <button class="primary-cta compact" type="button" data-jump-panel="products">Explore Pet Products</button>
+              </div>
+              <div class="hero-pet-card">
+                <img src="assets/images/hero-dog.jpg" alt="Golden retriever">
+                <div><small>Today's focus</small><strong>Hydration + play</strong></div>
+              </div>
+            </div>
+            <div class="stats-grid mt-4">
+              <article><span aria-hidden="true"><i class="bi bi-shield-plus"></i></span><strong id="vaccinationSummary">Up to date</strong><small>Vaccination status</small></article>
+              <article><span aria-hidden="true"><i class="bi bi-cup"></i></span><strong>2-3 meals</strong><small>Typical routine</small></article>
+              <article><span aria-hidden="true"><i class="bi bi-brush"></i></span><strong>Weekly</strong><small>Brush & coat check</small></article>
+              <article><span aria-hidden="true"><i class="bi bi-heart"></i></span><strong>Daily</strong><small>Bonding & activity</small></article>
+            </div>
+            <div class="quick-grid mt-4">
+              <button data-jump-panel="pet-profile"><span aria-hidden="true"><i class="bi bi-person-badge"></i></span><b>Pet Profile</b><small>Review the profile you entered</small></button>
+              <button data-jump-panel="feeding"><span aria-hidden="true"><i class="bi bi-cup"></i></span><b>Feeding Guide</b><small>Age-based chart and tips</small></button>
+              <button data-jump-panel="grooming"><span aria-hidden="true"><i class="bi bi-brush"></i></span><b>Grooming Videos</b><small>Brushing, bathing & trimming</small></button>
+              <button data-jump-panel="emergency"><span aria-hidden="true"><i class="bi bi-telephone"></i></span><b>Emergency Help</b><small>Static vet and poison contacts</small></button>
+            </div>
+          </section>
+
+          <section class="portal-panel" id="petProfilePanel" data-role="owner" data-panel="pet-profile" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Pet Care Section</div><h2>Pet Profile</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-person-badge"></i></span></div>
+            <div class="profile-card pet-profile-card">
+              <div class="pet-avatar"><span id="petAvatarIcon" aria-hidden="true"><i class="bi bi-heart-fill"></i></span></div>
+              <div class="profile-copy"><h3 class="js-pet-name">Pet</h3><p id="petProfileLine">Companion profile</p><div class="profile-tags" id="petProfileTags"></div></div>
+              <div class="profile-facts" id="petProfileFacts"></div>
+            </div>
+            <div class="notice-card mt-4"><span aria-hidden="true"><i class="bi bi-info-circle"></i></span><p><strong>Static care note:</strong> The medical and vaccination information shown in this educational portal is for demonstration only and does not replace veterinary advice.</p></div>
+          </section>
+
+          <section class="portal-panel" id="feedingPanel" data-role="owner" data-panel="feeding" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Pet Care Section</div><h2>Feeding Guide</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-cup"></i></span></div>
+            <div class="row g-4">
+              <div class="col-xl-7">
+                <div class="content-card h-100">
+                  <h3>General feeding chart</h3>
+                  <div class="table-responsive">
+                    <table class="table care-table align-middle">
+                      <thead><tr><th>Life stage</th><th>Meals/day</th><th>Guidance</th></tr></thead>
+                      <tbody>
+                        <tr><td>Puppy / Kitten</td><td><span class="pill">3-4</span></td><td>Smaller, nutrient-dense portions through the day.</td></tr>
+                        <tr><td>Adult Dog</td><td><span class="pill">2</span></td><td>Measured meals based on size and activity.</td></tr>
+                        <tr><td>Adult Cat</td><td><span class="pill">2-3</span></td><td>Balanced wet/dry food and fresh water.</td></tr>
+                        <tr><td>Senior</td><td><span class="pill">2</span></td><td>Monitor weight and discuss dietary changes with a vet.</td></tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-5">
+                <div class="content-card h-100">
+                  <h3>Daily meal rhythm</h3>
+                  <canvas id="feedingChart" width="460" height="270" aria-label="Feeding rhythm bar chart" role="img"></canvas>
+                  <p class="small text-secondary mb-0">Illustrative chart only. Individual needs vary by species, age, body condition and health.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="portal-panel" id="groomingPanel" data-role="owner" data-panel="grooming" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Pet Care Section</div><h2>Grooming Videos</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-scissors"></i></span></div>
+            <div class="row g-4">
+              <div class="col-lg-7">
+                <div class="video-card">
+                  <div class="ratio ratio-16x9">
+                    <iframe src="https://www.youtube-nocookie.com/embed/c7PSGezTyr4" title="How to groom your dog - Chewy" loading="lazy" allowfullscreen></iframe>
+                  </div>
+                  <div class="video-copy"><span class="video-badge">Embedded video</span><h3>Brushing, bathing, nails & basic trims</h3><p>Use gentle handling and pet-safe products. Stop if your pet shows pain or excessive stress.</p></div>
+                </div>
+              </div>
+              <div class="col-lg-5">
+                <div class="stack-cards">
+                  <article><span>1</span><div><h4>Brush first</h4><p>Remove loose hair and tangles before bathing.</p></div></article>
+                  <article><span>2</span><div><h4>Use pet-safe shampoo</h4><p>Avoid eyes and ears; rinse thoroughly.</p></div></article>
+                  <article><span>3</span><div><h4>Trim carefully</h4><p>Use proper tools and professional help when unsure.</p></div></article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="portal-panel" id="healthPanel" data-role="owner" data-panel="health" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Pet Care Section</div><h2>Health Tips</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-heart"></i></span></div>
+            <div class="tip-grid">
+              <article class="tip-card" data-speak="Check your pet's teeth and gums regularly. Bad breath, swelling, bleeding or difficulty eating should be discussed with a veterinarian."><span aria-hidden="true"><i class="bi bi-shield-check"></i></span><h3>Oral care</h3><p>Check teeth and gums, use pet-safe dental products, and watch for pain or bad breath.</p><button class="listen-tip" type="button"><i class="bi bi-volume-up" aria-hidden="true"></i> Listen</button></article>
+              <article class="tip-card" data-speak="Monitor body condition, not only the number on a scale. Sudden weight gain or weight loss can be an important health signal."><span aria-hidden="true"><i class="bi bi-activity"></i></span><h3>Healthy weight</h3><p>Monitor body condition, portion sizes and activity. Sudden changes deserve attention.</p><button class="listen-tip" type="button"><i class="bi bi-volume-up" aria-hidden="true"></i> Listen</button></article>
+              <article class="tip-card" data-speak="Watch for changes in appetite, water intake, energy, breathing, bathroom habits, skin or behavior. Contact a veterinarian when changes persist or seem severe."><span aria-hidden="true"><i class="bi bi-bandaid"></i></span><h3>Common warning signs</h3><p>Notice changes in appetite, drinking, energy, breathing, skin, bathroom habits or behavior.</p><button class="listen-tip" type="button"><i class="bi bi-volume-up" aria-hidden="true"></i> Listen</button></article>
+            </div>
+          </section>
+
+          <section class="portal-panel" id="trainingPanel" data-role="owner" data-panel="training" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Pet Care Section</div><h2>Training Tips</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-award"></i></span></div>
+            <div class="training-layout">
+              <div class="training-steps">
+                <article data-speak="Keep training sessions short and positive. Reward the behavior you want to see again."><b>01</b><div><h3>Short + positive</h3><p>Use brief sessions, calm repetition and rewards.</p><button class="listen-tip" type="button">Play audio guide</button></div></article>
+                <article data-speak="Use the same cue word each time. Everyone in the household should use the same rules and signals."><b>02</b><div><h3>Be consistent</h3><p>Keep cue words, household rules and rewards consistent.</p><button class="listen-tip" type="button">Play audio guide</button></div></article>
+                <article data-speak="Practice in a quiet room first, then gradually add mild distractions as your pet becomes successful."><b>03</b><div><h3>Add distractions slowly</h3><p>Build skills in calm spaces before making the environment harder.</p><button class="listen-tip" type="button">Play audio guide</button></div></article>
+              </div>
+              <div class="training-note"><span aria-hidden="true"><i class="bi bi-award"></i></span><h3>Reward the moment</h3><p>Give praise or a small reward immediately after the desired behavior so the connection is clear.</p></div>
+            </div>
+          </section>
+
+          <section class="portal-panel" id="productsPanel" data-role="owner" data-panel="products" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Pet Product Showcase</div><h2>Recommended Pet Products</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-bag"></i></span></div>
+            <div class="product-tools">
+              <label class="search-box"><span aria-hidden="true"><i class="bi bi-search"></i></span><input id="productSearch" type="search" placeholder="Search products..." aria-label="Search products"></label>
+              <select class="form-select" id="productCategory" aria-label="Filter product category">
+                <option value="all">All categories</option><option>Dog/Cat Food</option><option>Toys</option><option>Grooming Essentials</option><option>Bedding and Apparel</option><option>Health Supplements</option>
+              </select>
+              <select class="form-select" id="productSort" aria-label="Sort products">
+                <option value="featured">Sort: Featured</option><option value="price-low">Price: Low to High</option><option value="price-high">Price: High to Low</option><option value="name">Name A-Z</option>
+              </select>
+            </div>
+            <div class="product-grid" id="productGrid" aria-live="polite"></div>
+            <div class="empty-state" id="productEmpty" hidden><span aria-hidden="true"><i class="bi bi-search"></i></span><h3>No products found</h3><p>Try a different keyword or category.</p></div>
+          </section>
+
+          <section class="portal-panel" id="emergencyPanel" data-role="owner" data-panel="emergency" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Emergency and Vet Help</div><h2>Help Contacts</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-telephone"></i></span></div>
+            <div class="emergency-banner"><span>!</span><div><h3>For life-threatening emergencies</h3><p>Contact a local veterinarian or emergency animal hospital immediately. The numbers below are static demo data from an XML file.</p></div></div>
+            <div class="emergency-grid" id="emergencyGrid"></div>
+            <div class="contact-strip mt-4"><div><small>FurEver Care demo desk</small><strong>care@furever.example</strong></div><div><small>Phone</small><strong>+92 21 555 0188</strong></div><div><small>Location</small><strong>Karachi, Pakistan</strong></div></div>
+          </section>
+
+          <section class="portal-panel" id="feedbackPanel" data-role="owner" data-panel="feedback" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Feedback Page</div><h2>Tell Us What You Think</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-envelope"></i></span></div>
+            <div class="form-card">
+              <div class="form-card-copy"><span aria-hidden="true"><i class="bi bi-chat-left-text"></i></span><h3>UI-only feedback form</h3><p>No data is submitted or written to any server. A confirmation is shown only in the browser.</p></div>
+              <form id="feedbackForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-md-6"><label class="form-label" for="feedbackName">Name</label><input class="form-control" id="feedbackName" required minlength="3" maxlength="60" pattern="[A-Za-z][A-Za-z .'-]*"><div class="invalid-feedback">Name must be at least 3 characters and contain letters only.</div></div>
+                  <div class="col-md-6"><label class="form-label" for="feedbackEmail">Email</label><input class="form-control" id="feedbackEmail" type="email" required autocomplete="email" inputmode="email" pattern="[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}" placeholder="name@example.com"><div class="invalid-feedback">Enter a complete email address, for example name@example.com.</div></div>
+                  <div class="col-12"><label class="form-label" for="feedbackText">Feedback</label><textarea class="form-control" id="feedbackText" rows="5" maxlength="500" required></textarea></div>
+                  <div class="col-12"><button class="primary-cta compact" type="submit">Preview Feedback</button></div>
+                </div>
+              </form>
+            </div>
+          </section>
+
+          <section class="portal-panel" id="contactPanel" data-role="owner" data-panel="contact" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Contact Us</div><h2>Team & Location</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-geo-alt"></i></span></div>
+            <div class="row g-4">
+              <div class="col-lg-5"><div class="content-card h-100"><h3>FurEver Care Team</h3><ul class="contact-list"><li><span aria-hidden="true"><i class="bi bi-envelope"></i></span><div><small>Email</small><b>team@furever.example</b></div></li><li><span aria-hidden="true"><i class="bi bi-telephone"></i></span><div><small>Phone</small><b>+92 21 555 0188</b></div></li><li><span aria-hidden="true"><i class="bi bi-building"></i></span><div><small>Office</small><b>Karachi, Pakistan</b></div></li><li><span aria-hidden="true"><i class="bi bi-clock"></i></span><div><small>Current local portal time</small><b id="contactClock">--:--:--</b></div></li><li><span aria-hidden="true"><i class="bi bi-geo"></i></span><div><small>Your detected location</small><b id="contactLocation">Permission pending</b></div></li></ul></div></div>
+              <div class="col-lg-7"><div class="map-card"><iframe title="Google Map showing Karachi, Pakistan" src="https://www.google.com/maps?q=Karachi%2C%20Pakistan&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></div></div>
+            </div>
+          </section>
+
+          <section class="portal-panel" id="aboutPanel" data-role="owner" data-panel="about" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">About Us</div><h2>About FurEver Care</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-heart-fill"></i></span></div>
+            <div class="about-card"><div><h3>One portal, three pet-loving communities.</h3><p>FurEver Care is a front-end demonstration portal designed to centralize everyday pet care information, pet product discovery, veterinarian information and shelter adoption content. It is intentionally serverless: display data comes from static JSON/TXT/XML files or browser session state.</p><div class="about-values"><span>Accessible</span><span>User-friendly</span><span>Responsive</span><span>Fast</span><span>Browser compatible</span></div></div><img src="assets/images/about-pets.jpg" alt="Cats and dog together outdoors"></div>
+          </section>
+
+          <!-- VETERINARIAN PANELS -->
+          <section class="portal-panel" id="vetProfilePanel" data-role="vet" data-panel="vet-profile" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Veterinarian Profile</div><h2>Your Professional Profile</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-bandaid"></i></span></div>
+            <div class="vet-profile-card">
+              <div class="vet-photo-wrap"><img id="vetProfilePhoto" src="assets/images/vet-placeholder.jpg" alt="Veterinarian profile placeholder illustration"></div>
+              <div class="vet-profile-copy"><span class="profile-role">Veterinarian</span><h3 id="vetProfileName">Dr. Vet</h3><p id="vetProfileSpecialty">General Practice</p><div class="vet-contact-chips"><span id="vetProfileEmail">doctor@example.com</span><span id="vetProfilePhone">+92 300 0000000</span></div><p class="mt-3 mb-0 text-secondary">This front-end profile is populated from the setup form and retained only for the current browser session.</p></div>
+            </div>
+          </section>
+
+          <section class="portal-panel" id="vetSlotsPanel" data-role="vet" data-panel="vet-slots" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Appointments</div><h2>Booked & Available Time Slots</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-calendar3"></i></span></div>
+            <div class="slot-legend"><span><i class="slot-dot available"></i> Available</span><span><i class="slot-dot booked"></i> Booked</span></div>
+            <div class="slot-grid" id="slotGrid"></div>
+            <p class="display-only-note">Display only - selecting a slot does not create an appointment.</p>
+          </section>
+
+          <section class="portal-panel" id="vetCasesPanel" data-role="vet" data-panel="vet-cases" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Medical History Examples</div><h2>Static Case Studies</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-clipboard"></i></span></div>
+            <div class="case-grid" id="caseGrid"></div>
+          </section>
+
+          <section class="portal-panel" id="vetAboutPanel" data-role="vet" data-panel="vet-about" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Veterinary Portal</div><h2>How This Dashboard Helps</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-stars"></i></span></div>
+            <div class="feature-columns"><article><span>01</span><h3>Quick profile view</h3><p>Name, specialization and contact information in one place.</p></article><article><span>02</span><h3>Clear schedule status</h3><p>Booked and available appointment blocks are easy to scan.</p></article><article><span>03</span><h3>Case study examples</h3><p>Sample medical histories demonstrate how treatment records can be presented.</p></article></div>
+          </section>
+
+          <!-- SHELTER PANELS -->
+          <section class="portal-panel" id="adoptionPanel" data-role="shelter" data-panel="adoption" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Pet Adoption Gallery</div><h2>Meet Pets Looking for Homes</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-house-door"></i></span></div>
+            <div class="shelter-tools">
+              <div class="type-filters" id="adoptionTypeFilters"><button class="is-selected" data-type="all">All</button><button data-type="dog">Dogs</button><button data-type="cat">Cats</button><button data-type="rabbit">Rabbits</button></div>
+              <label class="search-box"><span aria-hidden="true"><i class="bi bi-search"></i></span><input id="adoptionSearch" type="search" placeholder="Search breed or location..." aria-label="Search adoptable pets"></label>
+              <select class="form-select" id="adoptionAge"><option value="all">Any age</option><option value="young">Young</option><option value="adult">Adult</option><option value="senior">Senior</option></select>
+            </div>
+            <div class="adoption-grid" id="adoptionGrid"></div>
+          </section>
+
+          <section class="portal-panel" id="storiesPanel" data-role="shelter" data-panel="stories" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Success Stories</div><h2>Happy Tails After Adoption</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-heart-fill"></i></span></div>
+            <div class="story-grid">
+              <article><img src="assets/images/story-sunny.jpg" alt="Dog with colorful toys"><div><span>Adopted in 2025</span><h3>Sunny found his forever family</h3><p>After several weeks in foster care, Sunny was matched with an active family who loves long walks and weekend adventures.</p></div></article>
+              <article><img src="assets/images/story-milo.jpg" alt="Cats relaxing outdoors"><div><span>Adopted in 2026</span><h3>Milo became the king of the sofa</h3><p>A shy cat at first, Milo settled in slowly and now spends his afternoons watching birds from his favorite window.</p></div></article>
+            </div>
+          </section>
+
+          <section class="portal-panel" id="eventsPanel" data-role="shelter" data-panel="events" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Shelter Events</div><h2>Upcoming Community Events</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-megaphone"></i></span></div>
+            <div class="event-list" id="eventList"></div>
+          </section>
+
+          <section class="portal-panel" id="shelterContactPanel" data-role="shelter" data-panel="shelter-contact" hidden>
+            <div class="panel-heading"><div><div class="section-kicker">Shelter Contact</div><h2>Visit or Contact the Shelter</h2></div><span class="heading-icon" aria-hidden="true"><i class="bi bi-geo-alt"></i></span></div>
+            <div class="row g-4"><div class="col-lg-5"><div class="content-card h-100"><h3>FurEver Rescue Network</h3><p class="text-secondary">Static sample shelter contact information.</p><ul class="contact-list"><li><span aria-hidden="true"><i class="bi bi-telephone"></i></span><div><small>Phone</small><b>+92 21 555 0142</b></div></li><li><span aria-hidden="true"><i class="bi bi-envelope"></i></span><div><small>Email</small><b>adopt@furever.example</b></div></li><li><span aria-hidden="true"><i class="bi bi-geo-alt"></i></span><div><small>Area</small><b>Karachi, Pakistan</b></div></li><li><span aria-hidden="true"><i class="bi bi-clock"></i></span><div><small>Hours</small><b>10:00 AM - 6:00 PM</b></div></li></ul></div></div><div class="col-lg-7"><div class="map-card"><iframe title="Google Map showing Karachi, Pakistan" src="https://www.google.com/maps?q=Karachi%2C%20Pakistan&output=embed" loading="lazy"></iframe></div></div></div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Reusable Bootstrap modal: Buy Now is intentionally non-functional. -->
+  <div class="modal fade" id="demoModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content demo-modal-content">
+        <div class="modal-body text-center p-4 p-md-5">
+          <div class="modal-paw" aria-hidden="true"><i class="bi bi-heart-fill"></i></div>
+          <h2 id="demoModalTitle">Demo action</h2>
+          <p id="demoModalText">This is a front-end demonstration only.</p>
+          <button class="primary-cta compact" type="button" data-bs-dismiss="modal">Got it</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container-fluid px-lg-4"><div><strong>FurEver Care</strong><span>Responsive NextGen Pet Care Portal</span></div></div>
+  </footer>
+
+  <script src="vendor/jquery.min.js"></script>
+  <script src="vendor/bootstrap.bundle.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
