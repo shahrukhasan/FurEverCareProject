@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "name": "Sunny",
+    "type": "dog",
+    "age": 1,
+    "ageGroup": "young",
+    "breed": "Golden Retriever Mix",
+    "location": "Karachi",
+    "description": "Playful, social and happiest around people.",
+    "image": "assets/images/adopt-sunny.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Milo",
+    "type": "cat",
+    "age": 2,
+    "ageGroup": "adult",
+    "breed": "Orange Tabby",
+    "location": "Karachi",
+    "description": "Curious indoor cat who enjoys quiet window spots.",
+    "image": "assets/images/adopt-milo.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Pepper",
+    "type": "rabbit",
+    "age": 1,
+    "ageGroup": "young",
+    "breed": "Mixed Rabbit",
+    "location": "Hyderabad",
+    "description": "Gentle rabbit who loves leafy greens and calm spaces.",
+    "image": "assets/images/adopt-pepper.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Coco",
+    "type": "dog",
+    "age": 5,
+    "ageGroup": "adult",
+    "breed": "Mixed Breed",
+    "location": "Karachi",
+    "description": "Easy-going companion who enjoys relaxed walks.",
+    "image": "assets/images/adopt-coco.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Luna",
+    "type": "cat",
+    "age": 8,
+    "ageGroup": "senior",
+    "breed": "Domestic Shorthair",
+    "location": "Karachi",
+    "description": "Calm senior cat looking for a peaceful home.",
+    "image": "assets/images/adopt-luna.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Biscuit",
+    "type": "rabbit",
+    "age": 3,
+    "ageGroup": "adult",
+    "breed": "Domestic Rabbit",
+    "location": "Thatta",
+    "description": "Friendly and food-motivated; enjoys supervised floor time.",
+    "image": "assets/images/adopt-biscuit.jpg"
+  }
+]

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<contacts>
+  <contact>
+    <name>FurEver Demo Vet Desk</name>
+    <type>General Vet Help</type>
+    <phone>+92 21 555 0101</phone>
+    <hours>8:00 AM - 10:00 PM</hours>
+  </contact>
+  <contact>
+    <name>City Animal Emergency Demo</name>
+    <type>Emergency Clinic</type>
+    <phone>+92 21 555 0199</phone>
+    <hours>24/7</hours>
+  </contact>
+  <contact>
+    <name>Pet Poison Information Demo</name>
+    <type>Poison Helpline</type>
+    <phone>+92 21 555 0177</phone>
+    <hours>24/7</hours>
+  </contact>
+</contacts>

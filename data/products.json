@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1,
+    "name": "Wholesome Chicken Bites",
+    "category": "Dog/Cat Food",
+    "description": "Balanced dry-food style demo listing for everyday adult pet nutrition.",
+    "price": 3290,
+    "image": "assets/images/product-food.jpg"
+  },
+  {
+    "id": 2,
+    "name": "Bounce & Fetch Ball Set",
+    "category": "Toys",
+    "description": "Bright, easy-to-carry play balls designed for supervised fetch sessions.",
+    "price": 1250,
+    "image": "assets/images/product-toy.jpg"
+  },
+  {
+    "id": 3,
+    "name": "Gentle Groom Brush",
+    "category": "Grooming Essentials",
+    "description": "Soft-pin grooming brush for routine coat care and loose-hair removal.",
+    "price": 1890,
+    "image": "assets/images/product-grooming.jpg"
+  },
+  {
+    "id": 4,
+    "name": "Cloud Nap Pet Bed",
+    "category": "Bedding and Apparel",
+    "description": "A cozy cushioned resting spot with a soft raised edge for nap time.",
+    "price": 5490,
+    "image": "assets/images/product-bed.jpg"
+  },
+  {
+    "id": 5,
+    "name": "Daily Wellness Drops",
+    "category": "Health Supplements",
+    "description": "A non-functional supplement showcase item; consult a veterinarian before real use.",
+    "price": 2750,
+    "image": "assets/images/product-wellness.jpg"
+  },
+  {
+    "id": 6,
+    "name": "Cat Crunch Variety Pack",
+    "category": "Dog/Cat Food",
+    "description": "A colorful sample food listing created for the product filter demonstration.",
+    "price": 2890,
+    "image": "assets/images/product-cat-food.jpg"
+  },
+  {
+    "id": 7,
+    "name": "Rope Buddy Tug Toy",
+    "category": "Toys",
+    "description": "A supervised tug-and-play demo product with an easy-grip rope texture.",
+    "price": 990,
+    "image": "assets/images/product-rope.jpg"
+  },
+  {
+    "id": 8,
+    "name": "Fresh Coat Bath Kit",
+    "category": "Grooming Essentials",
+    "description": "Shampoo, towel and grooming comb style showcase for routine coat care.",
+    "price": 3600,
+    "image": "assets/images/product-bath.jpg"
+  }
+]

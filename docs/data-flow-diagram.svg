@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#5c45c9"/></marker></defs>
+  <rect width="1200" height="760" rx="34" fill="#fbf9ff"/>
+  <text x="600" y="65" text-anchor="middle" font-family="Arial" font-size="36" font-weight="700" fill="#352a4a">FurEver Care - Data Flow Diagram</text>
+  <g font-family="Arial" text-anchor="middle">
+    <rect x="440" y="280" width="320" height="160" rx="30" fill="#6d4aff"/><text x="600" y="345" font-size="27" font-weight="700" fill="white">Browser SPA</text><text x="600" y="382" font-size="18" fill="#efeaff">JavaScript + jQuery</text>
+    <rect x="70" y="120" width="260" height="110" rx="24" fill="#fff0f7" stroke="#df5a9c" stroke-width="3"/><text x="200" y="168" font-size="23" font-weight="700" fill="#5e2d49">User Forms</text><text x="200" y="198" font-size="17" fill="#5f5967">Session state only</text>
+    <rect x="70" y="510" width="260" height="110" rx="24" fill="#eefbf8" stroke="#36a995" stroke-width="3"/><text x="200" y="558" font-size="23" font-weight="700" fill="#245e55">Browser APIs</text><text x="200" y="588" font-size="17" fill="#5f5967">Clock • Geolocation • Audio</text>
+    <rect x="870" y="100" width="260" height="110" rx="24" fill="#f3efff" stroke="#7d62d9" stroke-width="3"/><text x="1000" y="148" font-size="23" font-weight="700" fill="#4c377c">JSON Files</text><text x="1000" y="178" font-size="17" fill="#5f5967">Products • Pets • Cases</text>
+    <rect x="870" y="325" width="260" height="110" rx="24" fill="#fff6e7" stroke="#e7a13d" stroke-width="3"/><text x="1000" y="373" font-size="23" font-weight="700" fill="#76501d">XML Files</text><text x="1000" y="403" font-size="17" fill="#5f5967">Emergency • Events</text>
+    <rect x="870" y="550" width="260" height="110" rx="24" fill="#eef9ff" stroke="#48a7d2" stroke-width="3"/><text x="1000" y="598" font-size="23" font-weight="700" fill="#285b73">TXT File</text><text x="1000" y="628" font-size="17" fill="#5f5967">Ticker updates</text>
+    <text x="600" y="700" font-size="18" fill="#615970">No server-side database or write operation is used.</text>
+  </g>
+  <g stroke="#5c45c9" stroke-width="4" fill="none" marker-end="url(#a)">
+    <path d="M330 175 C400 175 400 300 440 320"/><path d="M330 565 C405 565 390 435 440 405"/>
+    <path d="M870 155 C815 155 805 305 760 320"/><path d="M870 380 L770 380"/><path d="M870 605 C810 605 805 435 760 415"/>
+  </g>
+</svg>

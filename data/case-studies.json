@@ -1,0 +1,5 @@
+[
+  {"pet":"Bella","species":"Dog","age":"6 years","issue":"Recurring itchy skin","history":"Seasonal itching, paw licking and mild redness. Appetite and activity normal.","plan":"Skin exam, parasite review, diet history and follow-up monitoring.","status":"Improving"},
+  {"pet":"Simba","species":"Cat","age":"4 years","issue":"Dental tartar","history":"Bad breath and visible tartar noticed during routine check. Eating normally.","plan":"Oral exam, dental cleaning discussion and home dental-care guidance.","status":"Scheduled"},
+  {"pet":"Oreo","species":"Rabbit","age":"2 years","issue":"Reduced appetite","history":"Eating less hay for one day with fewer droppings reported by owner.","plan":"Prompt physical exam, hydration assessment and dental/gastrointestinal evaluation.","status":"Monitoring"}
+]
